@@ -1,0 +1,81 @@
+# ---------------------------------------------------------------
+# ShopyHapy .gitignore  (monorepo: backend, customer-app, admin-app)
+# ---------------------------------------------------------------
+
+# Secrets and local configuration – NEVER commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+*.mobileprovision
+*.p8
+secrets/
+application-local.yml
+application-local.properties
+service-account*.json
+firebase-adminsdk*.json
+# Firebase client config files are not secret keys, but keep them per-environment, not in the repo
+google-services.json
+GoogleService-Info.plist
+
+# Java / Maven
+backend/target/
+**/target/
+*.class
+*.log
+*.iml
+hs_err_pid*
+
+# Node / Angular / Ionic
+node_modules/
+**/dist/
+**/.angular/
+**/.nx/
+**/www/
+**/coverage/
+**/.sass-cache/
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# Capacitor native projects: keep the project folders, ignore build output
+**/android/.gradle/
+**/android/build/
+**/android/app/build/
+**/android/local.properties
+**/android/capacitor-cordova-android-plugins/
+**/android/app/src/main/assets/public/
+**/ios/App/Pods/
+**/ios/App/build/
+**/ios/App/App/public/
+**/ios/DerivedData/
+**/ios/xcuserdata/
+*.xcuserstate
+
+# Uploaded files / local object storage / database data
+uploads/
+storage/
+mysql-data/
+redis-data/
+*.sql.gz
+*.dump
+
+# IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test and tooling output
+playwright-report/
+test-results/
